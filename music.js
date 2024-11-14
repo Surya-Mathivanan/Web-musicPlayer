@@ -6,35 +6,30 @@ const tracks = [
     },
     {
         title: "Song",
-        src: "Gangstaa-MassTamilan.dev.mp3" // Add the correct path for your second song
+        src: "Gangstaa-MassTamilan.dev.mp3"
     },
     {
         title: "Song",
-        src: "Hukum---Thalaivar-Alappara-MassTamilan.dev.mp3" // Add the correct path for your second song
+        src: "Hukum---Thalaivar-Alappara-MassTamilan.dev.mp3"
     },
     {
         title: "Song",
-        src: "Saitji-Saitji-MassTamilan.com.mp3" // Add the correct path for your second song
+        src: "Saitji-Saitji-MassTamilan.com.mp3" 
     },
     {
         title: "Song",
-        src: "Sachin-Sachin.mp3" // Add the correct path for your second song
+        src: "Sachin-Sachin.mp3" 
     },
     {
         title: "Song",
-        src: "Nallai-Allai.mp3" // Add the correct path for your second song
+        src: "Nallai-Allai.mp3"
     },
     {
         title: "Song",
-        src: "Hey-Minnale-MassTamilan.dev.mp3" // Add the correct path for your third song
+        src: "Hey-Minnale-MassTamilan.dev.mp3" 
     }
 ];
-
-
-
 let currentTrackIndex = 0;
-
-// HTML elements
 const audio = document.getElementById('audio');
 const trackTitle = document.getElementById('track-title');
 const musicGif = document.getElementById('music-gif');
@@ -43,16 +38,13 @@ const prevButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
 const volumeControl = document.getElementById('volume');
 const seekControl = document.getElementById('seek');
-
-// Load the first track
 loadTrack(currentTrackIndex);
 
-// Load the track function
+
 function loadTrack(index) {
     audio.src = tracks[index].src;
     trackTitle.textContent = tracks[index].title;
 }
-
 playButton.addEventListener('click', () => {
     if (audio.paused || audio.currentTime === 0) {
         audio.play();
@@ -68,7 +60,7 @@ playButton.addEventListener('click', () => {
 });
 
 
-// Previous track functionality
+
 prevButton.addEventListener('click', () => {
     currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length; // Loop back to last track
     loadTrack(currentTrackIndex);
@@ -77,7 +69,7 @@ prevButton.addEventListener('click', () => {
     playButton.textContent = 'Pause';
 });
 
-// Next track functionality
+
 nextButton.addEventListener('click', () => {
     currentTrackIndex = (currentTrackIndex + 1) % tracks.length; // Loop back to first track
     loadTrack(currentTrackIndex);
